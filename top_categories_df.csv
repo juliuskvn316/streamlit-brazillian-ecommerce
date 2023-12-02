@@ -1,0 +1,16 @@
+clusters,product_category_name_english,order_id
+0,bed_bath_table,3220
+0,sports_leisure,2827
+0,health_beauty,2760
+0,computers_accessories,2225
+0,furniture_decor,1911
+1,bed_bath_table,5667
+1,furniture_decor,4911
+1,sports_leisure,3541
+1,computers_accessories,3486
+1,health_beauty,3425
+2,health_beauty,3564
+2,bed_bath_table,2797
+2,watches_gifts,2481
+2,sports_leisure,2366
+2,housewares,2218
