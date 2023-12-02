@@ -11,8 +11,6 @@ from surprise.model_selection import GridSearchCV, train_test_split
 from surprise import SVD, accuracy
 from collections import defaultdict
 
-pip install matplotlib
-
 # Load datasets
 dataset_clustering = pd.read_csv('./Dataset Streamlit/dataset_clustering.csv', sep=';')
 raw_data_merge = pd.read_csv('./Dataset Streamlit/raw_data_merge.csv', sep=',')
