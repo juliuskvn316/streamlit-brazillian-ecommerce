@@ -80,7 +80,8 @@ elif page == "Key Metrics Overview":
                 try:
                     stat_summary = data[metric].describe().rename({'50%': 'Median'}).reset_index(drop=True)
                     stat_summary['Metric'] = metric
-                    overview = pd.concat([overview, stat_summary[['Metric', 'mean', 'min', 'max', 'Median']]], ignore_index=True)
+                    # Use iloc to select values by integer-location based indexing
+                    overview = pd.concat([overview, stat_summary.iloc[:, [4, 0, 1, 2, 3]]], ignore_index=True)
                 except Exception as e:
                     st.error(f"Error calculating statistics for metric '{metric}': {str(e)}")
             else:
