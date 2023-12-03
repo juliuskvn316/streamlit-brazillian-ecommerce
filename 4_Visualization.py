@@ -75,7 +75,7 @@ elif page == "Key Metrics Overview":
     def display_metrics_overview(data, metrics):
         overview = pd.DataFrame(columns=['Metric', 'Mean', 'Min', 'Max', 'Median'])
         
-        for metric in data.columns:
+        for metric in metrics:
             mean_value = data[metric].mean()
             min_value = data[metric].min()
             max_value = data[metric].max()
