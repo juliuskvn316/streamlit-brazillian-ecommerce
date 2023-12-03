@@ -78,12 +78,9 @@ elif page == "Key Metrics Overview":
         for metric in metrics:
             if metric in data.columns:
                 try:
-                    mean_value = data[metric].mean()
-                    min_value = data[metric].min()
-                    max_value = data[metric].max()
-                    median_value = data[metric].median()
-                    
-                    overview = overview.append({'Metric': metric, 'Mean': mean_value, 'Min': min_value, 'Max': max_value, 'Median': median_value}, ignore_index=True)
+                    stat_summary = data[metric].describe().rename({'50%': 'Median'})
+                    stat_summary['Metric'] = metric
+                    overview = pd.concat([overview, stat_summary[['Metric', 'mean', 'min', 'max', 'Median']]], ignore_index=True)
                 except Exception as e:
                     st.error(f"Error calculating statistics for metric '{metric}': {str(e)}")
             else:
