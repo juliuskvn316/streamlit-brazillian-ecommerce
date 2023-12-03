@@ -43,8 +43,7 @@ elif page == "Sample Raw Dataset":
     st.write(raw_data_merge)
 
     # Add explanation
-    total_entries = raw_data_merge.shape[0]
-    st.write(f"Total entries in the dataset: {total_entries}")
+    st.write(f"Total entries in the dataset: 115.609 to 113.193 based on the order")
 
     # Features to drop with less than 10% missing values
     features_to_drop_10_percent = ['order_approved_at', 'order_delivered_carrier_date', 'order_delivered_customer_date',
