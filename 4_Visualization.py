@@ -76,13 +76,19 @@ elif page == "Key Metrics Overview":
         overview = pd.DataFrame(columns=['Metric', 'Mean', 'Min', 'Max', 'Median'])
         
         for metric in metrics:
-            mean_value = data[metric].mean()
-            min_value = data[metric].min()
-            max_value = data[metric].max()
-            median_value = data[metric].median()
-            
-            overview = overview.append({'Metric': metric, 'Mean': mean_value, 'Min': min_value, 'Max': max_value, 'Median': median_value}, ignore_index=True)
-        
+            if metric in data.columns:
+                try:
+                    mean_value = data[metric].mean()
+                    min_value = data[metric].min()
+                    max_value = data[metric].max()
+                    median_value = data[metric].median()
+                    
+                    overview = overview.append({'Metric': metric, 'Mean': mean_value, 'Min': min_value, 'Max': max_value, 'Median': median_value}, ignore_index=True)
+                except Exception as e:
+                    st.error(f"Error calculating statistics for metric '{metric}': {str(e)}")
+            else:
+                st.warning(f"Metric '{metric}' not found in the dataset.")
+    
         return overview
 
     st.title('Key Metrics Overview')
