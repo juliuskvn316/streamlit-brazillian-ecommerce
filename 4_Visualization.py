@@ -78,14 +78,14 @@ elif page == "Key Metrics Overview":
         for metric in metrics:
             if metric in data.columns:
                 try:
-                    stat_summary = data[metric].describe().rename({'50%': 'Median'})
+                    stat_summary = data[metric].describe().rename({'50%': 'Median'}).reset_index(drop=True)
                     stat_summary['Metric'] = metric
                     overview = pd.concat([overview, stat_summary[['Metric', 'mean', 'min', 'max', 'Median']]], ignore_index=True)
                 except Exception as e:
                     st.error(f"Error calculating statistics for metric '{metric}': {str(e)}")
             else:
                 st.warning(f"Metric '{metric}' not found in the dataset.")
-    
+        
         return overview
 
     st.title('Key Metrics Overview')
