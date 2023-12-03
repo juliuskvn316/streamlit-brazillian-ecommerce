@@ -247,7 +247,7 @@ elif page == "Top Categories":
 
     st.title('Hourly Purchase Count by Category')
 
-    hourly_purchase_count = pd.read_csv('./Dataset Streamlit/hourly_purchase_count.csv', sep=',')
+    hourly_purchase_count = pd.read_csv('./hourly_purchase_count.csv', sep=',')
     st.write(hourly_purchase_count)
 
     def hourly_purchase_count_by_category(data, category):
