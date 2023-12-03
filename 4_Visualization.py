@@ -76,16 +76,12 @@ elif page == "Key Metrics Overview":
         overview = pd.DataFrame(columns=['Metric', 'Mean', 'Min', 'Max', 'Median'])
         
         for metric in metrics:
-            if metric in data.columns:
-                try:
-                    stat_summary = data[metric].describe().rename({'50%': 'Median'}).reset_index(drop=True)
-                    stat_summary['Metric'] = metric
-                    # Use iloc to select values by integer-location based indexing
-                    overview = pd.concat([overview, stat_summary.iloc[:, [4, 0, 1, 2, 3]]], ignore_index=True)
-                except Exception as e:
-                    st.error(f"Error calculating statistics for metric '{metric}': {str(e)}")
-            else:
-                st.warning(f"Metric '{metric}' not found in the dataset.")
+            mean_value = data[metric].mean()
+            min_value = data[metric].min()
+            max_value = data[metric].max()
+            median_value = data[metric].median()
+            
+            overview = overview.append({'Metric': metric, 'Mean': mean_value, 'Min': min_value, 'Max': max_value, 'Median': median_value}, ignore_index=True)
         
         return overview
 
