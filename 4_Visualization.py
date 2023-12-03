@@ -12,15 +12,15 @@ from surprise import SVD, accuracy
 from collections import defaultdict
 
 # Load datasets
-dataset_clustering = pd.read_csv('./Dataset Streamlit/dataset_clustering.csv', sep=';')
-raw_data_merge = pd.read_csv('./Dataset Streamlit/raw_data_merge.csv', sep=',')
-monthly_purchase = pd.read_csv('./Dataset Streamlit/monthly_purchase.csv', sep=',')
-hourly_purchase_count = pd.read_csv('./Dataset Streamlit/hourly_purchase_count.csv', sep=',')
-data_rfm_fix = pd.read_csv('./Dataset Streamlit/data_rfm_fix.csv', sep=',')
-top_categories_df = pd.read_csv('./Dataset Streamlit/top_categories_df.csv', sep=',')
-df = pd.read_csv('./Dataset Streamlit/df.csv', sep=',')
-merged_df = pd.read_csv('./Dataset Streamlit/merged_df.csv', sep=',')
-top_10_ratings = pd.read_csv('./Dataset Streamlit/top_10_ratings.csv', sep=',')
+dataset_clustering = pd.read_csv('./dataset_clustering.csv', sep=';')
+raw_data_merge = pd.read_csv('./raw_data_merge.csv', sep=',')
+monthly_purchase = pd.read_csv('./monthly_purchase.csv', sep=',')
+hourly_purchase_count = pd.read_csv('./hourly_purchase_count.csv', sep=',')
+data_rfm_fix = pd.read_csv('./data_rfm_fix.csv', sep=',')
+top_categories_df = pd.read_csv('./top_categories_df.csv', sep=',')
+df = pd.read_csv('./df.csv', sep=',')
+merged_df = pd.read_csv('./merged_df.csv', sep=',')
+top_10_ratings = pd.read_csv('./top_10_ratings.csv', sep=',')
 
 # Set page config
 st.set_page_config(
