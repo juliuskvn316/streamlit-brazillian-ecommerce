@@ -256,7 +256,6 @@ elif page == "Top Categories":
     st.title('Hourly Purchase Count by Category')
 
     hourly_purchase_count = pd.read_csv('./hourly_purchase_count.csv', sep=',')
-    st.write(hourly_purchase_count)
 
     def hourly_purchase_count_by_category(data, category):
         df_category = data[data['product_category_name_english'] == category]
