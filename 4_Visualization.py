@@ -94,16 +94,6 @@ elif page == "Key Metrics Overview":
     st.markdown('One customer only purchases one time. This data explained that most customers still rarely purchased')
     st.markdown('Same with total review, product order, and category order which means e-commerce still not yet optimized based on customer needs')
 
-    st.write(monthly_purchase)
-
-    st.title('Key Metrics Overview')
-    overview_table = display_metrics_overview(dataset_clustering, metrics)
-    st.table(overview_table)
-    st.markdown('One customer only purchases one time. This data explained that most customers still rarely purchased')
-    st.markdown('Same with total review, product order, and category order which means e-commerce still not yet optimized based on customer needs')
-
-    st.write(monthly_purchase)
-
 # Page 5 - Top Categories
 elif page == "Top Categories":
     st.title('Top 10 Product Categories with Highest Number of Sales Amount')
