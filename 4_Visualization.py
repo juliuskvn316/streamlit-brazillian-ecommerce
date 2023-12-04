@@ -93,6 +93,11 @@ elif page == "Key Metrics Overview":
     st.table(overview_table)
     st.markdown('One customer only purchases one time. This data explained that most customers still rarely purchased')
     st.markdown('Same with total review, product order, and category order which means e-commerce still not yet optimized based on customer needs')
+    
+    st.markdown('Business Understanding')
+    st.markdown('1. They need to increase the sustainability through make the users purchase more in their e-commerce')    
+    st.markdown('2. They need to find the products which customer’s liked or intent to purchase')  
+    st.markdown('3. Collaborate with the sellers to create entertaining, and bundling purchase')  
 
 # Page 5 - Top Categories
 elif page == "Top Categories":
