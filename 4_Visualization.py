@@ -72,21 +72,29 @@ elif page == "Key Metrics Overview":
     metrics = ['frequency', 'monetary', 'avg_score', 'total_review', 'total_product_order', 'total_category_order', 'recency']
 
     def display_metrics_overview(data, metrics):
-        overview = pd.DataFrame(columns=['Metric', 'Mean', 'Min', 'Max', 'Median'])
-        
+        overview_data = []
+
         for metric in metrics:
             mean_value = data[metric].mean()
             min_value = data[metric].min()
             max_value = data[metric].max()
             median_value = data[metric].median()
-            
-            # Create a new row using a dictionary
-            new_row = {'Metric': metric, 'Mean': mean_value, 'Min': min_value, 'Max': max_value, 'Median': median_value}
-            
-            # Concatenate the new row to the existing DataFrame
-            overview = pd.concat([overview, pd.DataFrame([new_row])], ignore_index=True)
-        
+
+            # Append data to the list
+            overview_data.append({'Metric': metric, 'Mean': mean_value, 'Min': min_value, 'Max': max_value, 'Median': median_value})
+
+        # Create the DataFrame once all metrics are processed
+        overview = pd.DataFrame(overview_data)
+
         return overview
+
+    st.title('Key Metrics Overview')
+    overview_table = display_metrics_overview(dataset_clustering, metrics)
+    st.table(overview_table)
+    st.markdown('One customer only purchases one time. This data explained that most customers still rarely purchased')
+    st.markdown('Same with total review, product order, and category order which means e-commerce still not yet optimized based on customer needs')
+
+    st.write(monthly_purchase)
 
     st.title('Key Metrics Overview')
     overview_table = display_metrics_overview(dataset_clustering, metrics)
