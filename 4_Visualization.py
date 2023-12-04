@@ -273,7 +273,6 @@ elif page == "Top Categories":
 # Page 6 - Clusters Overview
 elif page == "Clusters Overview":
     st.title('3 Clusters based on RFM')
-    st.write(data_rfm_fix)
 
     fig, axes = plt.subplots(nrows=3, ncols=1, figsize=(10, 12))
     sns.boxplot(x='clusters', y='frequency', data=data_rfm_fix, ax=axes[0])
@@ -317,7 +316,6 @@ elif page == "Clusters Overview":
 # Page 7 - Top Categories by Cluster
 elif page == "Top Categories by Cluster":
     st.title('Top 5 categories based on each cluster')
-    st.write(top_categories_df)
     
     cluster_mapping = {0: 'Almost Churn Customer', 1: 'Top Customer', 2: 'New Customer'}
     top_categories_df['clusters'] = top_categories_df['clusters'].map(cluster_mapping)
