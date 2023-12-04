@@ -80,7 +80,11 @@ elif page == "Key Metrics Overview":
             max_value = data[metric].max()
             median_value = data[metric].median()
             
-            overview = overview.append({'Metric': metric, 'Mean': mean_value, 'Min': min_value, 'Max': max_value, 'Median': median_value}, ignore_index=True)
+            # Create a new row using a dictionary
+            new_row = {'Metric': metric, 'Mean': mean_value, 'Min': min_value, 'Max': max_value, 'Median': median_value}
+            
+            # Concatenate the new row to the existing DataFrame
+            overview = pd.concat([overview, pd.DataFrame([new_row])], ignore_index=True)
         
         return overview
 
