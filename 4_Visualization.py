@@ -35,7 +35,7 @@ if page == "Welcome":
     st.markdown("# Welcome to Portfolio Julius Kevin! 👋")
     st.markdown("## Improve e-commerce Sustainabilities through Clustering and Recommendation System")
     st.markdown("### By Julius Kevin")
-    st.markdown("Data Scientist with a BSc in Industrial Engineering. Proven expertise in data analysis, project management, and Google Ads. Runner-up in Data Science Boothcamp. Proficient in Python, SQL, and Looker Studio. Seeking a role to apply skills and drive innovation.")
+    st.markdown("Data Scientist with a BSc in Industrial Engineering. Proven expertise in data analysis, project management, and Google Ads. Runner-up in Data Science Boothcamp. Proficient in Python, SQL, and Looker Studio.")
     st.markdown("This data set from Brazilian E-commerce posted by Olist Store (in Kaggle). The dataset has information of 100k+ orders from 2016 to 2018 made at multiple marketplaces in Brazil.")
     st.markdown("https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce")
 
